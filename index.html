@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Large Number Calculator</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="/style.css" />
+	<script src="/main.js"></script>
+</head>
+<body>
+	<!-- DISPLAYS WHEN JS IS NOT ENABLED -->
+	<noscript>
+		<div>
+		<h1>Attention!</h1>
+		<p>Javascript is currently <em>disabled</em> or <em>not supported</em> in your browser. As a result, some part of mywebsite won't function correctly.
+		<p>Here are some ways to enable Javascript:</p>
+		<ul>
+			<li>Go to <a href="https://enable-javascript.com/">this website</a>, choose your browser, and follow thedirections.</li>
+			<li>Upgrade your browser to the newest versions.</li>
+			<li>If you are using Internet Explorer, I highly recommend you to use a better alternative such as Firefox orGoogle Chrome.</li>
+		</ul>
+		<p>I won't go away unless Javascript is properly enabled.</p>
+		</div>
+	</noscript>
+
+	<!-- THE MAIN CONTAINER -->
+	<div class="container">
+		<h1>Large Number Calculator</h1>
+		<p>Calculate multiplications and divisions without getting the INFINITY error.</p>
+		<p>Type two numbers in the form of <strong><var>a</var>e<var>n</var></strong>, also known as <em>scientific notation</em>, where <var>a</var> is a decimal number that satisfies the conditions 1 &le; <var>a</var> &lt; 10, and <var>n</var> is an integer.</p>
+		<form id="numInputs">
+			<label for="num1">Number 1:</label>
+			<input type="text" name="num1" id="num1" value="2.5e32"><br />
+			<label for="num2">Number 2:</label>
+			<input type="text" name="num2" id="num2" value="2.5e32"><br />
+			<input type="button" onclick="multiplication()" value="Multiply!"><br>
+			<input type="button" onclick="division()" value="Divide!">
+		</form>
+		<p class="result-line">Result is: <code id="result"></code></p>
+		<small id="copyright">1</small> <!-- COPYRIGHT TEXT -->
+	</div>
+	<script>
+		var date = new Date();
+		var currentYear = date.getFullYear().toString();
+		document.querySelector("small#copyright").innerHTML = "&copy; " + currentYear + " Datario. All Rights Reserved.";
+	</script>
+</body>
+</html>
